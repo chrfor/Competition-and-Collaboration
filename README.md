@@ -7,15 +7,15 @@ This folder contains the different files which are necessary to make 2 agents so
 See here under the pre requisites from Udacity to install and Test Unity Environmnent.
 
 The files in this folders have to be installed in a single repository.
--In the Jupyter Notebook <Tennisa> you find 
-    -the call to the libraries
-    -how to start Unity Double Join arm environment (20 agents environment) have been leveraged
-    -how to call the API to interact with Unity Tennis environment
-    -The code to train the DDPG Agent
--ddpg-agent.py : The DDPG agent which have been adapted from the Udacity DDPG Pendulum agent
--model.py :  The document which encode the Actor and Critic Neural Network which have been adapted from DDPG Pendulum
--The checkpoints actor and critic files where you find the Neural Network Weights
--Unity environment log
+.In the Jupyter Notebook <Tennisa> you find 
+>the call to the libraries
+>how to start Unity Tennis environment
+>how to call the API to interact with Unity Tennis environment
+>The code to train the DDPG Agent
+.ddpg-agent.py : The DDPG agent which have been adapted from the Udacity DDPG Pendulum agent
+.model.py :  The document which encode the Actor and Critic Neural Network which have been adapted from DDPG Pendulum
+.The checkpoints actor and critic files where you find the Neural Network Weights
+.Unity environment log
 
 NB : Python libraries folder have not been uploaded but need to be installed in the same folder
 
