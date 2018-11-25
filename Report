@@ -1,0 +1,43 @@
+This file describe the learning algorithm which have been set to solve the Tennis Unity environment.
+
+The core of learning algorithm comes from the DDPG pendulum which have been adapted to solve the 2 agents environment :
+- Agent Training: (From the core jupyter tennisA.ipynb)
+    - For each episode : 
+      =>the environment is reset
+      =>the state is collected from the environment
+      =>the score matrix for 2 agents is populated with 0
+      =>the agent is reset 
+      
+      - a loop is started to  play up to 1000 time step per episode 
+         - the state is passed to the agent, to get an action back
+         - the action which comes back from the agent is sent to the environnment 
+         - the next state is sent back from the environment 
+         - the reward is send back from the environment 
+         - the information regarded the episode is finished is send back by the environment as well (Done)
+         - a tuple including (State, Action, Reward, Next_State, Done) from the 2 agents is sent to the function Agent Step 
+           to save the tuple to the Replay Buffer
+         - the score is updated
+         - the next state is triggered
+         - Every 20 time steps, the agent learn from the Replay Buffer, 10 samples to learn fast from past actions consequences and environment 
+
+- DDPG_Agent:
+  -The Agent was adapted versus the Pendulum and Continuous Control Project 
+   - The number of cells per layer were decreased from (400, 300) to (128,64) for both actor and critic network which bring a lot of performance
+   - The learning rate was increased by a factor 10 (From 10^-4 to 10^-3).
+   - The replay buffer size was decreased by a 10 factor as well to increase the agent performance - and make that the latest and better experiences are used for training the agent (Recommendation Udacity)
+     
+  -The DDPG agent works with continuous state and action space.It's matching with the environnment requirements
+  -The Actor which encodes the policy makes decision of the best action based on a state as input   
+  -The Actor is parametized by a Neural Network. The objective function of the Actor is given by the Critic 
+  -A replay buffer is used to store and recall actions with specific routine to take into account the tuples from 2 agents
+  -The replay buffer size is updated to match the research paper related to DDPG (See reference in the code)
+  -A Noise is added in the process to select the action(Actor) in order to add stochacity in action taken to encourage exploratory behavior.
+  -Action are clipped to -1 to 1 (See forum) to ease the convergence expected
+  -The Critic encodes the value function and tells the actor how good is the policy selected
+  -The Critic is parametized by a Neural Network as well and optimized based on the reward obtained by the Actor
+  -The Batch_size is updated to 1024 to improve the learning - Smaller batch size did not make the learning algorithm converging
+
+
+
+-Model
+  - Batch normalization was added only at input (We had batch norm at every layer previously)
