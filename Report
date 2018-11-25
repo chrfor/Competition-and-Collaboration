@@ -1,5 +1,11 @@
 This file describe the learning algorithm which have been set to solve the Tennis Unity environment.
 
+We leveraged DDPG algorithm to solve the environment :
+The DDPG is made off 2 key components:
+- The Actor which follow a policy; This policy is random at the very beginning, getting more and more accurate thanks to the feedback of the Critic component 
+- The Critic component obverves the behaviour of the Actor and gives feedback. The Critic improved is feedback by observing the actor actions, states and rewards from the environment
+ 
+
 The core of learning algorithm comes from the DDPG pendulum which have been adapted to solve the 2 agents environment :
 - Agent Training: (From the core jupyter tennisA.ipynb)
     - For each episode : 
