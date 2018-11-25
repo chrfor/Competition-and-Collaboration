@@ -1,0 +1,7 @@
+What are the next steps to optimize the DDPG algorithm 
+- To insert API Call to visualize the architecture when training to help debugging the ongoing job
+- To add different random noise per agent in order to explore the action spaces in a more efficient way (More different directions)
+- To try out other algorithms 
+    -PPO
+    -D4PG
+    -MADDPG
