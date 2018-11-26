@@ -1,5 +1,7 @@
-What are the next steps to optimize the DDPG algorithm 
+What are the next steps to optimize the algorithm
+  On the DDPG side 
 - To insert API Call to visualize the architecture when training to help debugging the ongoing job
 - To add different random noise per agent in order to explore the action spaces in a more efficient way (More different directions)
-- To try out other algorithms which sounds to be more efficient related to Multi agents training. MADDPG sounds the right candidate (see: https://arxiv.org/pdf/1706.02275.pdf)
+
+To try out other algorithm which sounds to be more efficient related to Multi agents training. MADDPG sounds the right candidate (see: https://arxiv.org/pdf/1706.02275.pdf)
 
